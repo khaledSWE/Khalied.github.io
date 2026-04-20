@@ -22,16 +22,11 @@ body {
     margin-top: 30px;
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    animation: fadeIn 1s ease-in;
 }
 
 header {
     text-align: center;
-}
-
-header img {
-    width: 120px;
-    border-radius: 50%;
-    margin-bottom: 10px;
 }
 
 header h1 {
@@ -44,19 +39,49 @@ header h1 {
     font-weight: bold;
 }
 
+/* Sections */
 h2 {
     border-bottom: 2px solid #0077b5;
     padding-bottom: 5px;
     margin-top: 20px;
 }
 
-ul {
-    list-style: square;
-    padding-left: 20px;
-}
-
 .section {
     margin-bottom: 20px;
+}
+
+/* Skills Bar */
+.skill {
+    margin: 10px 0;
+}
+
+.skill-name {
+    font-weight: bold;
+}
+
+.skill-bar {
+    width: 100%;
+    background: #ddd;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.skill-level {
+    height: 10px;
+    background: #0077b5;
+    width: 0;
+    animation: fillBar 2s forwards;
+}
+
+/* Animation */
+@keyframes fillBar {
+    from { width: 0; }
+    to { width: var(--level); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px);}
+    to { opacity: 1; transform: translateY(0);}
 }
 
 /* Responsive */
@@ -74,11 +99,10 @@ ul {
 <div class="container">
 
 <header>
-    <img src="https://via.placeholder.com/120" alt="Profile Photo">
     <h1>Khaled Aljameel</h1>
     <p>Email: your@email.com</p>
     <p class="contact">
-        <a href="http://linkedin.com/in/khaled-aljmeel" target="_blank">My LinkedIn Profile</a>
+        <a href="http://linkedin.com/in/khaled-aljmeel" target="_blank">LinkedIn Profile</a>
     </p>
 </header>
 
@@ -89,27 +113,56 @@ ul {
 
 <div class="section">
     <h2>Skills</h2>
-    <ul>
-        <li>Python</li>
-        <li>Java</li>
-        <li>JavaScript</li>
-        <li>HTML</li>
-        <li>SQL</li>
-    </ul>
+
+    <div class="skill">
+        <div class="skill-name">Python</div>
+        <div class="skill-bar">
+            <div class="skill-level" style="--level: 90%"></div>
+        </div>
+    </div>
+
+    <div class="skill">
+        <div class="skill-name">Java</div>
+        <div class="skill-bar">
+            <div class="skill-level" style="--level: 80%"></div>
+        </div>
+    </div>
+
+    <div class="skill">
+        <div class="skill-name">JavaScript</div>
+        <div class="skill-bar">
+            <div class="skill-level" style="--level: 75%"></div>
+        </div>
+    </div>
+
+    <div class="skill">
+        <div class="skill-name">HTML</div>
+        <div class="skill-bar">
+            <div class="skill-level" style="--level: 85%"></div>
+        </div>
+    </div>
+
+    <div class="skill">
+        <div class="skill-name">SQL</div>
+        <div class="skill-bar">
+            <div class="skill-level" style="--level: 70%"></div>
+        </div>
+    </div>
+
 </div>
 
 <div class="section">
     <h2>Projects</h2>
     <ul>
-        <li>Personal CV Website (this project)</li>
-        <li>Simple Web Application</li>
-        <li>Database Project using SQL</li>
+        <li>Personal CV Website</li>
+        <li>Web Application Project</li>
+        <li>Database Project (SQL)</li>
     </ul>
 </div>
 
 <div class="section">
     <h2>Experience</h2>
-    <p>Looking for opportunities / Internship</p>
+    <p>Looking for internship opportunities</p>
 </div>
 
 </div>
